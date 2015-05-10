@@ -45,6 +45,8 @@ public class DalilaFrame extends JFrame
    private JButton refreshBtn;
    private JButton removeBtn;
    private final Dimension screenSize;
+   private JTableAdapter tableAdapter;
+   
    
    public DalilaFrame(String title) throws IOException {
       super(title);
@@ -105,6 +107,7 @@ public class DalilaFrame extends JFrame
       south.add(closeBtn);
       
       this.add(south, BorderLayout.SOUTH);
+      tableAdapter = new JTableAdapter();
       
       hostsTable.addMouseListener(new MouseAdapter()
          {
